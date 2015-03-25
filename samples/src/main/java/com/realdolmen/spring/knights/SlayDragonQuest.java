@@ -1,4 +1,4 @@
-package books.knights;
+package com.realdolmen.spring.knights;
 
 import java.io.PrintStream;
 

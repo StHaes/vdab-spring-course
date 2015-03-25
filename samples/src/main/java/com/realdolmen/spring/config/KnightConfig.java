@@ -1,10 +1,10 @@
-package books.config;
+package com.realdolmen.spring.config;
 
-import books.aop.Minstrel;
-import books.knights.BraveKnight;
-import books.knights.Knight;
-import books.knights.Quest;
-import books.knights.SlayDragonQuest;
+import com.realdolmen.spring.aop.Minstrel;
+import com.realdolmen.spring.knights.BraveKnight;
+import com.realdolmen.spring.knights.Knight;
+import com.realdolmen.spring.knights.Quest;
+import com.realdolmen.spring.knights.SlayDragonQuest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;

@@ -1,4 +1,4 @@
-package books.aop;
+package com.realdolmen.spring.aop;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;

@@ -1,7 +1,6 @@
-package books.app;
+package com.realdolmen.spring;
 
-import books.config.KnightConfig;
-import books.knights.Knight;
+import com.realdolmen.spring.knights.Knight;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -15,7 +14,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class KnightMain {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(KnightConfig.class);
+        ConfigurableApplicationContext context = SpringApplication.run(KnightMain.class);
         Knight knight = context.getBean(Knight.class);
         knight.embarkOnQuest();
         context.close();
