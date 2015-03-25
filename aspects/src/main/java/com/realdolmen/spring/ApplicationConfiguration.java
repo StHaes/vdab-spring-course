@@ -4,10 +4,11 @@ import com.realdolmen.spring.domain.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @ComponentScan
-// TODO 1: Enable the Spring AOP Engine
+@EnableAspectJAutoProxy
 public class ApplicationConfiguration {
     @Bean
     public Zoo zoo() {
