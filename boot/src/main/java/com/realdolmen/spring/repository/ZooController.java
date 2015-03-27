@@ -3,25 +3,34 @@ package com.realdolmen.spring.repository;
 import com.realdolmen.spring.domain.Animal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Map;
+
+import static org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.fromMappingName;
 
 @Controller
 @RequestMapping("/")
 public class ZooController {
     @Autowired private AnimalRepository animalRepository;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String animals(Map<String, Object> model) {
+    @RequestMapping(value="animals", method = RequestMethod.GET)
+    public String listAnimals(Map<String, Object> model) {
         model.put("animals", animalRepository.findAll());
         return "zoo";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value="animal", method = RequestMethod.POST)
     public String createAnimal(Animal animal) {
         animalRepository.create(animal);
-        return "redirect:/";
+        return "redirect:" + fromMappingName("ZC#listAnimals").build();
+    }
+
+    @RequestMapping(value="animal/{id}/remove", method = RequestMethod.GET)
+    public String removeAnimal(@PathVariable("id") int id) {
+        animalRepository.remove(id);
+        return "redirect:" + fromMappingName("ZC#listAnimals").build();
     }
 }

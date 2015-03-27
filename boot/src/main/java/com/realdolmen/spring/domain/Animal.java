@@ -1,15 +1,13 @@
 package com.realdolmen.spring.domain;
 
-import org.hibernate.validator.constraints.Length;
-
-import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class Animal {
     public enum Type {
-        chimp, lion, tiger, elephant, hippo, panda
+        Chimp, Lion, Tiger, Elephant, Hippo, Panda
     }
 
+    private Integer id;
     private String name;
     private Type type;
 
@@ -17,8 +15,21 @@ public class Animal {
     }
 
     public Animal(String name, Type type) {
-        setName(name);
-        setType(type);
+        this(null, name, type);
+    }
+
+    public Animal(Integer id, String name, Type type) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
