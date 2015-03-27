@@ -3,9 +3,7 @@ package com.realdolmen.spring.domain;
 import java.util.Objects;
 
 public class Animal {
-    public enum Type {
-        Chimp, Lion, Tiger, Elephant, Hippo, Panda
-    }
+    public enum Type { Chimp, Lion, Tiger, Elephant, Hippo, Panda }
 
     private Integer id;
     private String name;

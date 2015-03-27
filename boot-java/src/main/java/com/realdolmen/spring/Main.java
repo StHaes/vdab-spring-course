@@ -9,8 +9,6 @@ import org.thymeleaf.templateresolver.TemplateResolver;
 @SpringBootApplication
 public class Main {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context;
-        context = SpringApplication.run(Main.class, args);
-        System.out.println("stop");
+        SpringApplication.run(Main.class, args);
     }
 }

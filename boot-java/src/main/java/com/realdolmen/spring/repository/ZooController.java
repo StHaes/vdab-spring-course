@@ -12,9 +12,13 @@ import java.util.Map;
 import static org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.fromMappingName;
 
 @Controller
-@RequestMapping("/")
 public class ZooController {
     @Autowired private AnimalRepository animalRepository;
+
+    @RequestMapping(value="/", method = RequestMethod.GET)
+    public String index(Map<String, Object> model) {
+        return "redirect:" + fromMappingName("ZC#listAnimals").build();
+    }
 
     @RequestMapping(value="animals", method = RequestMethod.GET)
     public String listAnimals(Map<String, Object> model) {
