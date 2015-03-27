@@ -3,6 +3,17 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/aspects" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/boot" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/bootstrap-3.3.4" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/bootstrap.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/fonts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/fonts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/index.html" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/js" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/js" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/static/startbootstrap-sb-admin-2-1.0.5" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/boot/src/main/resources/templates/zoo.htmlodshf" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/introduction" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/samples" charset="UTF-8" />
   </component>
