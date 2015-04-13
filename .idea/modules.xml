@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/introduction/introduction.iml" filepath="$PROJECT_DIR$/introduction/introduction.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/samples.iml" filepath="$PROJECT_DIR$/samples/samples.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-4-course.iml" filepath="$PROJECT_DIR$/spring-4-course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wiring/wiring.iml" filepath="$PROJECT_DIR$/wiring/wiring.iml" />
     </modules>
   </component>
 </project>

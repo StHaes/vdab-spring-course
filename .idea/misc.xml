@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/introduction/pom.xml" />
         <option value="$PROJECT_DIR$/samples/pom.xml" />
         <option value="$PROJECT_DIR$/boot-java/pom.xml" />
+        <option value="$PROJECT_DIR$/wiring/pom.xml" />
       </list>
     </option>
   </component>

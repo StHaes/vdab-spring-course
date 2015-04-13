@@ -31,6 +31,7 @@
         <module name="boot-java" />
         <module name="introduction" />
         <module name="samples" />
+        <module name="wiring" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -43,6 +44,7 @@
       <module name="boot-java" target="1.8" />
       <module name="introduction" target="1.8" />
       <module name="samples" target="1.8" />
+      <module name="wiring" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
