@@ -19,6 +19,7 @@
         <module>boot-groovy</module>
         <module>samples</module>
         <module>wiring2</module>
+        <module>data</module>
     </modules>
 
 </project>
