@@ -15,6 +15,7 @@
         <module>introduction</module>
         <module>wiring</module>
         <module>aspects</module>
+        <module>data-access-jdbc</module>
         <module>boot-java</module>
         <module>boot-groovy</module>
         <module>samples</module>
