@@ -13,8 +13,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class ApplicationConfiguration {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(ApplicationConfiguration.class);
-//        ConfigurableApplicationContext context = SpringApplication.run(ZooConfig.class);
+//        ConfigurableApplicationContext context = SpringApplication.run(ApplicationConfiguration.class);
+        ConfigurableApplicationContext context = SpringApplication.run(ZooConfig.class);
         // TODO Fetch the ZooImpl class and print out its name and its animal count
         // TODO Test your code by running this main
 

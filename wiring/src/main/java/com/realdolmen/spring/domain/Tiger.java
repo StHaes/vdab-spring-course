@@ -7,4 +7,9 @@ public class Tiger extends Animal {
     public Tiger(String s) {
         super(s);
     }
+
+    @Override
+    public String toString() {
+        return "Tiger";
+    }
 }

@@ -7,4 +7,9 @@ public class Elephant extends Animal {
     public Elephant(String s) {
         super(s);
     }
+
+    @Override
+    public String toString() {
+        return "Elephant";
+    }
 }
