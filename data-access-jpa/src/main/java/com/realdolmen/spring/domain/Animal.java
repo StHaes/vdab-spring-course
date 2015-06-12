@@ -1,8 +1,11 @@
 package com.realdolmen.spring.domain;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
 
 // TODO: enhance this class for use with JPA.
+@Component
 public class Animal {
     public enum Type {
         bear,

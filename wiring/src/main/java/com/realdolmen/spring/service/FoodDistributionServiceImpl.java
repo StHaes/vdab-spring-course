@@ -21,10 +21,9 @@ public class FoodDistributionServiceImpl implements FoodDistributionService {
     @Override
     public void feedAnimalsByType(List<Animal> animals) {
         for (Animal animal : animals) {
-            f.findFoodForAnimalType(animal.getClass());
+            System.out.println("----------");
             System.out.println("Feeding delicious " + f.findFoodForAnimalType(animal.getClass()).toString() +" to " + animal.getName());
+            System.out.println("----------");
         }
-
-
     }
 }

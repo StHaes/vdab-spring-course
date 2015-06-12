@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by jeansmits on 9/06/15.
+ * Created by jeansmits on 10/06/15.
  */
-public class FoodRepositoryImpl implements FoodRepository {
+public class TestFoodRepositoryImpl implements FoodRepository {
     private Map<String, Food> feed = new HashMap<>();
     @Override
     public void addFoodForAnimalType(Class<? extends Animal> clazz, Food food) {
