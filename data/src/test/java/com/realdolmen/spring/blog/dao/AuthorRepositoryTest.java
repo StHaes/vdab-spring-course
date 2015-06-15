@@ -13,6 +13,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -64,5 +66,16 @@ public class AuthorRepositoryTest {
         Comment c = new Comment();
         commentRepository.saveAndFlush(c);
         assertNotNull(c.getId());
+    }
+
+    @Test
+    public void testCreatesListOfComments() throws Exception {
+        Comment a = new Comment();
+        Comment b = new Comment();
+        Comment c = new Comment();
+        commentRepository.save(a);
+        commentRepository.save(b);
+        commentRepository.save(c);
+        assertNotNull(commentRepository.findFirst50ByBlogPost_idOrderByCreationDateDesc(c.getId()).size());
     }
 }

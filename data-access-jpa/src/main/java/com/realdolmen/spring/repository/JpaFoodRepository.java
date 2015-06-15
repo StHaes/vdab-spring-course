@@ -27,7 +27,7 @@ public class JpaFoodRepository implements FoodRepository {
 
     @Override
     public List<Food> findFoodForAnimalType(Animal.Type type) {
-        return entityManager.createQuery("select d.food from DietEntry d where d.animalType = :animalType order by d.food.name",Food.class).setParameter("animalType", Animal.Type.bear).getResultList();
+        return entityManager.createQuery("select d.food from DietEntry d where d.animalType = :animalType order by d.food.name",Food.class).setParameter("animalType", type).getResultList();
     }
 
     @Override
