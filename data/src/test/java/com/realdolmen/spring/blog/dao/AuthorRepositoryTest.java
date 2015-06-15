@@ -5,16 +5,17 @@ import com.realdolmen.spring.blog.domain.Author;
 import com.realdolmen.spring.blog.domain.Blog;
 import com.realdolmen.spring.blog.domain.BlogPost;
 import com.realdolmen.spring.blog.domain.Comment;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
+import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -38,7 +39,12 @@ public class AuthorRepositoryTest {
     @Autowired
     CommentRepository commentRepository;
     // TODO add unit tests to test the repository
-
+    @Before
+    public void addSomeStuff(){
+        authorRepository.save(new Author("JerrySpringer@gmail.com","JSprings","GXYFH"));
+        authorRepository.save(new Author("Daenerys@gmail.com","Dani","Drogon1480"));
+        authorRepository.save(new Author("IknowNothing@gmail.com","JonSnow","WildlingChick"));
+    }
 
     @Test
     public void testAuthorExistsInRepository() throws Exception {
@@ -77,5 +83,10 @@ public class AuthorRepositoryTest {
         commentRepository.save(b);
         commentRepository.save(c);
         assertNotNull(commentRepository.findFirst50ByBlogPost_idOrderByCreationDateDesc(c.getId()).size());
+    }
+
+    @Test
+    public void testFindAllByUserName() throws Exception {
+        assertEquals("Dani", authorRepository.findAll(new Sort("userName")).get(0).getUserName());
     }
 }
