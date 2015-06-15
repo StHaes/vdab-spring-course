@@ -25,10 +25,7 @@ import java.sql.SQLException;
 @ComponentScan
 @EnableTransactionManagement
 public class ZooConfig {
-//    @Bean
-//    public FoodRepository foodRepository(){
-//        Foodrepository f = new J
-//    }
+
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
         return new JpaTransactionManager(entityManagerFactory);
@@ -37,17 +34,19 @@ public class ZooConfig {
     // TODO: Configure a DataSource for MySQL in the production profile (BasicDataSource)
     @Profile("production")
     @Bean
-    public DataSource dataSource() throws SQLException {
-        DataSource ds = new BasicDataSource();
-        ds.getConnection("root","");
-        return ds;
+    public DataSource dataSource() {
+        BasicDataSource dataSource = new BasicDataSource();
+        dataSource.setUrl("jdbc:msql://localhost:3306/zoo");
+        dataSource.setUsername("root");
+        dataSource.setPassword("");
+        return dataSource;
     }
 
     // TODO: configure an embedded DataSource for H2 in the test profile
     @Profile("test")
     @Bean
     public DataSource embeddedDataSource(){
-        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
+        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("schema.sql").build();
     }
 
 
@@ -55,11 +54,21 @@ public class ZooConfig {
     // TODO: Configure an EntityManagerFactory bean for use with Hibernate
     @Profile("test")
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() throws SQLException {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(DataSource dataSource,JpaVendorAdapter jpaVendorAdapter) throws SQLException {
         LocalContainerEntityManagerFactoryBean lf = new LocalContainerEntityManagerFactoryBean();
         lf.setPackagesToScan("com.realdolmen.spring");
-        lf.setDataSource(embeddedDataSource());
+        lf.setDataSource(dataSource);
+        lf.setJpaVendorAdapter(jpaVendorAdapter);
         return lf;
+    }
+    @Bean
+    public JpaVendorAdapter jpaVendorAdapter(){
+        HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
+        hibernateJpaVendorAdapter.setDatabase(Database.MYSQL);
+        hibernateJpaVendorAdapter.setGenerateDdl(true);
+        hibernateJpaVendorAdapter.setShowSql(true);
+        return hibernateJpaVendorAdapter;
+
     }
 
     // TODO: Make sure your EntityManagerFactoryBean is set up for using dialect H2 in test and dialect MySQL in production

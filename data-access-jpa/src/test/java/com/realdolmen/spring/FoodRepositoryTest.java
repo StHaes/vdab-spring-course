@@ -25,7 +25,7 @@ public class FoodRepositoryTest {
     private FoodRepository foodRepository;
 
     @Test
-    public void findById() throws Exception {
+    public void findById() throws Exception { //check!
         Food food = foodRepository.findFoodById(1);
         assertEquals("Salmon", food.getName());
         assertEquals(208, food.getCalories());
@@ -33,12 +33,12 @@ public class FoodRepositoryTest {
     }
 
     @Test
-    public void findAll() throws Exception {
+    public void findAll() throws Exception {//check!
         assertEquals(7, countAllFood());
     }
 
     @Test
-    public void remove() throws Exception {
+    public void remove() throws Exception { //check!
         int start = countAllFood();
         foodRepository.removeFood(foodRepository.findFoodById(1));
         assertEquals(start - 1, countAllFood());

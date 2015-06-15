@@ -23,12 +23,12 @@ public class AnimalRepositoryTest {
 
     @Test
     public void findAll() throws Exception {
-        assertEquals(3, animalRepository.findAll().size());
+        assertEquals(3, animalRepository.findAll().size());//check!
     }
 
     @Test
     public void findById() throws Exception {
-        Animal animal = animalRepository.findById(1);
+        Animal animal = animalRepository.findById(1);//check!
         assertEquals(1, animal.getId().intValue());
         assertEquals("Tigger", animal.getName());
         assertEquals(Animal.Type.tiger, animal.getType());
@@ -39,9 +39,9 @@ public class AnimalRepositoryTest {
     @Test
     public void create() throws Exception {
         int start = countAnimals();
-        Animal piglet = new Animal("Piglet", Animal.Type.pig, 2, "P-1");
+        Animal piglet = new Animal("Piglet", Animal.Type.pig, 2, "P-1");//check !
         animalRepository.create(piglet);
-        assertNotNull(piglet.getId());
+        assertNotNull(piglet.getId());//check!
         assertEquals(start + 1, countAnimals());
     }
 
@@ -49,13 +49,13 @@ public class AnimalRepositoryTest {
     public void remove() throws Exception {
         int before = countAnimals();
         animalRepository.remove(animalRepository.findById(1));
-        assertEquals(before - 1, countAnimals());
+        assertEquals(before - 1, countAnimals()); //check!
     }
 
     @Test
     public void update() throws Exception {
         Animal animal = animalRepository.findById(2);
-        animal.setName("Winnie-The-Pooh");
+        animal.setName("Winnie-The-Pooh"); //check!
         animalRepository.update(animal);
         assertEquals("Winnie-The-Pooh", animalRepository.findById(animal.getId()).getName());
     }

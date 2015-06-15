@@ -2,10 +2,11 @@ package com.realdolmen.spring.domain;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.util.Objects;
 
 // TODO: enhance this class for use with JPA.
-@Component
+@Entity
 public class Animal {
     public enum Type {
         bear,
@@ -16,11 +17,12 @@ public class Animal {
         owl,
         kangaroo
     }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
-
+    @Enumerated(EnumType.STRING)
     private Type type;
 
     private int age;

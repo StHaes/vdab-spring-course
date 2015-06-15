@@ -1,6 +1,7 @@
 package com.realdolmen.spring.repository;
 
 import com.realdolmen.spring.domain.Animal;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
